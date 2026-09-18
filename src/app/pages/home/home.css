@@ -1,0 +1,162 @@
+ :root {
+    --azul-escuro: #0d1b3e;
+    --roxo: #6a2fb0;
+    --roxo-claro: #a259d9;
+    --branco: #ffffff;
+    --texto-claro: #e6e6f0;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .descricao {
+    padding: 20%;
+    text-align: center;
+    display: flex;
+  }
+
+  .vitrine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+  }
+
+  /* NAVBAR */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--azul-escuro);
+    border-bottom: 1px solid #1e2a52;
+  }
+
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+
+  nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  nav ul li a:hover {
+    color: var(--roxo-claro);
+  }
+
+  .social-icon {
+    font-size: 20px;
+  }
+
+  /* HERO */
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, var(--azul-escuro) 0%, var(--roxo) 100%);
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 64px;
+    font-weight: 400;
+  }
+
+  .hero h1 span {
+    color: var(--roxo-claro);
+    font-weight: bold;
+  }
+
+  .hero p.subtitulo {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .hero img.produto {
+    max-width: 300px;
+    margin: 50px 0;
+  }
+
+  /* SEÇÃO PRINCIPAL */
+
+  .destaque {
+    background-color: var(--roxo);
+    padding: 60px 40px;
+  }
+
+  .destaque .rotulo {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .descPrincipal {
+    margin: inherit;
+    display: block;
+    padding: 10%;
+  }
+
+  .destaque h2 {
+    font-size: 42px;
+    line-height: 1.3;
+    margin-bottom: 25px;
+  }
+
+  .destaque p {
+    max-width: 600px;
+    font-size: 16px;
+    color: var(--texto-claro);
+    margin-bottom: 30px;
+  }
+
+  .cta {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .cta a {
+    color: var(--branco);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+    }
+
+    .destaque h2 {
+      font-size: 28px;
+    }
+  }
