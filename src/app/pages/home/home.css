@@ -1,162 +1,226 @@
- :root {
-    --azul-escuro: #0d1b3e;
-    --roxo: #6a2fb0;
-    --roxo-claro: #a259d9;
-    --branco: #ffffff;
-    --texto-claro: #e6e6f0;
+:host {
+  --azul-noite: #0c1440;
+  --azul-profundo: #171257;
+  --roxo: #6d28d9;
+  --roxo-claro: #9333ea;
+  --rosa: #ec4899;
+  --branco: #f8f7fc;
+  --fonte-titulo: 'Baloo 2', 'Fredoka', sans-serif;
+  --fonte-texto: 'Nunito', 'Segoe UI', sans-serif;
+
+  display: block;
+  font-family: var(--fonte-texto);
+  color: var(--branco);
+  background: var(--azul-noite);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* HEADER */
+header {
+  height: 10dvh;
+  min-height: 72px;
+  background: var(--azul-noite);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.conteudoHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-height: 100%;
+  max-width: 100%;
+  height: 100%;
+  padding: 0 24px;
+}
+
+.conteudoHeader.nav {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 1;
+  gap: 16px;
+}
+
+.conteudoHeader.nav a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.conteudoHeader.nav a:hover,
+.conteudoHeader.nav a:focus-visible {
+  color: var(--rosa);
+}
+
+.logo {
+  display: block;
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-insta {
+  display: block;
+  padding-left: 25px;
+}
+
+/* MAIN */
+main {
+  min-height: 90dvh;
+}
+
+section {
+  padding: 64px 24px;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+  background: radial-gradient(circle at top, var(--azul-profundo), var(--azul-noite) 70%);
+}
+
+.hero__marca {
+  width: min(420px, 80vw);
+}
+
+.hero__slogan {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  max-width: 640px;
+}
+
+.hero__produto {
+  width: min(360px, 80vw);
+}
+
+/* PILARES */
+.pilares {
+  background: linear-gradient(180deg, var(--azul-noite), var(--roxo-claro));
+  text-align: left;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.pilares__eyebrow {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.pilares__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1.05;
+  margin: 0 0 24px;
+}
+
+.pilares__titulo span {
+  display: block;
+}
+
+.pilares__titulo em {
+  color: var(--rosa);
+  font-style: normal;
+}
+
+.pilares__texto {
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.pilares__cta {
+  display: inline-block;
+  margin-top: 24px;
+  font-weight: 700;
+  color: var(--branco);
+}
+
+/* PROJETO */
+.projeto {
+  background: var(--roxo-claro);
+  text-align: center;
+}
+
+.projeto__titulo {
+  font-family: var(--fonte-titulo);
+  color: var(--azul-noite);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+}
+
+.projeto__intro,
+.projeto__texto {
+  max-width: 720px;
+  margin: 16px auto;
+  line-height: 1.6;
+}
+
+.projeto__galeria {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin: 32px 0;
+}
+
+.projeto__galeria img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 0 32px var(--rosa);
+}
+
+/* RODAPÉ */
+.rodape {
+  background: var(--azul-noite);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.rodape__marca {
+  width: min(320px, 70vw);
+}
+
+.rodape__frase {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+}
+
+.rodape__contato-titulo {
+  font-weight: 700;
+  margin-top: 24px;
+}
+
+.rodape__email {
+  color: var(--branco);
+  text-decoration: none;
+  background: var(--azul-profundo);
+  padding: 8px 20px;
+  border-radius: 999px;
+}
+
+.rodape__logo {
+  height: 48px;
+  margin-top: 24px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 720px) {
+  .conteudoHeader.nav {
+    display: none;
   }
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .descricao {
-    padding: 20%;
-    text-align: center;
-    display: flex;
-  }
-
-  .vitrine {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: var(--azul-escuro);
-    color: var(--branco);
-  }
-
-  /* NAVBAR */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: var(--azul-escuro);
-    border-bottom: 1px solid #1e2a52;
-  }
-
-  .logo {
-    font-size: 22px;
-    font-weight: bold;
-  }
-
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-  }
-
-  nav ul li a {
-    color: var(--branco);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-  }
-
-  nav ul li a:hover {
-    color: var(--roxo-claro);
-  }
-
-  .social-icon {
-    font-size: 20px;
-  }
-
-  /* HERO */
-  .hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(180deg, var(--azul-escuro) 0%, var(--roxo) 100%);
-    text-align: center;
-    padding: 60px 20px;
-  }
-
-  .hero h1 {
-    font-size: 64px;
-    font-weight: 400;
-  }
-
-  .hero h1 span {
-    color: var(--roxo-claro);
-    font-weight: bold;
-  }
-
-  .hero p.subtitulo {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: 600;
-  }
-
-  .hero img.produto {
-    max-width: 300px;
-    margin: 50px 0;
-  }
-
-  /* SEÇÃO PRINCIPAL */
-
-  .destaque {
-    background-color: var(--roxo);
-    padding: 60px 40px;
-  }
-
-  .destaque .rotulo {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-
-  .descPrincipal {
-    margin: inherit;
-    display: block;
-    padding: 10%;
-  }
-
-  .destaque h2 {
-    font-size: 42px;
-    line-height: 1.3;
-    margin-bottom: 25px;
-  }
-
-  .destaque p {
-    max-width: 600px;
-    font-size: 16px;
-    color: var(--texto-claro);
-    margin-bottom: 30px;
-  }
-
-  .cta {
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-  }
-
-  .cta a {
-    color: var(--branco);
-    text-decoration: underline;
-  }
-
-  @media (max-width: 768px) {
-    header {
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    nav ul {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .hero h1 {
-      font-size: 40px;
-    }
-
-    .destaque h2 {
-      font-size: 28px;
-    }
-  }
+}
