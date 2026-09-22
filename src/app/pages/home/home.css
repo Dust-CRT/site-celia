@@ -1,6 +1,6 @@
 :host {
-  --azul-noite: #0c1440;
-  --azul-profundo: #171257;
+  --azul-claro: #171257;
+  --azul-escuro: #0c1440;
   --roxo: #6d28d9;
   --roxo-claro: #9333ea;
   --rosa: #ec4899;
@@ -11,18 +11,18 @@
   display: block;
   font-family: var(--fonte-texto);
   color: var(--branco);
-  background: var(--azul-noite);
+  background: var(--azul-escuro);
 }
 
 * {
   box-sizing: border-box;
 }
 
-/* HEADER */
 header {
   height: 10dvh;
   min-height: 72px;
-  background: var(--azul-noite);
+  background: rgba(12, 20, 64, .8);
+  backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -65,107 +65,105 @@ header {
   object-fit: contain;
 }
 
-.logo-insta {
+.logoInsta {
   display: block;
   padding-left: 25px;
 }
 
-/* MAIN */
 main {
   min-height: 90dvh;
 }
 
 section {
+  display: 1fr 1fr 1fr;
   padding: 64px 24px;
 }
 
-/* HERO */
 .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 32px;
-  background: radial-gradient(circle at top, var(--azul-profundo), var(--azul-noite) 70%);
+  background: radial-gradient(circle at top, var(--azul-claro), var(--azul-escuro) 70%);
 }
 
-.hero__marca {
+.heroMarca {
   width: min(420px, 80vw);
 }
 
-.hero__slogan {
+.heroSlogan {
   font-family: var(--fonte-titulo);
   font-weight: 700;
   font-size: clamp(1.1rem, 2.5vw, 1.6rem);
   max-width: 640px;
 }
 
-.hero__produto {
+.heroProduto {
   width: min(360px, 80vw);
 }
 
-/* PILARES */
 .pilares {
-  background: linear-gradient(180deg, var(--azul-noite), var(--roxo-claro));
+  background: linear-gradient(180deg, var(--azul-escuro), var(--roxo-claro));
   text-align: left;
-  max-width: 720px;
-  margin: 0 auto;
+  justify-items: center;
+  padding-left: 30%;
+  padding-right: 30%;
 }
 
-.pilares__eyebrow {
+.pilaresEyebrow {
   font-weight: 700;
   margin-bottom: 8px;
 }
 
-.pilares__titulo {
+.pilaresTitulo {
   font-family: var(--fonte-titulo);
   font-size: clamp(2rem, 6vw, 3.5rem);
   line-height: 1.05;
   margin: 0 0 24px;
 }
 
-.pilares__titulo span {
+.pilaresTitulo span {
   display: block;
 }
 
-.pilares__titulo em {
+.pilaresTitulo em {
   color: var(--rosa);
   font-style: normal;
 }
 
-.pilares__texto {
+.pilaresTexto {
   font-size: 1.05rem;
   line-height: 1.5;
 }
 
-.pilares__cta {
+.pilaresCta {
   display: inline-block;
   margin-top: 24px;
   font-weight: 700;
   color: var(--branco);
 }
 
-/* PROJETO */
 .projeto {
   background: var(--roxo-claro);
   text-align: center;
 }
 
-.projeto__titulo {
+.projetoTitulo {
   font-family: var(--fonte-titulo);
   color: var(--azul-noite);
   font-size: clamp(2rem, 5vw, 3rem);
   line-height: 1.1;
 }
 
-.projeto__intro,
-.projeto__texto {
+.projetoIntro,
+.projetoTexto {
   max-width: 720px;
   margin: 16px auto;
   line-height: 1.6;
 }
 
-.projeto__galeria {
+.projetoGaleria {
   display: flex;
   justify-content: center;
   gap: 24px;
@@ -173,7 +171,7 @@ section {
   margin: 32px 0;
 }
 
-.projeto__galeria img {
+.projetoGaleria img {
   width: 160px;
   height: 160px;
   object-fit: contain;
@@ -181,7 +179,6 @@ section {
   box-shadow: 0 0 32px var(--rosa);
 }
 
-/* RODAPÉ */
 .rodape {
   background: var(--azul-noite);
   text-align: center;
@@ -191,21 +188,21 @@ section {
   gap: 12px;
 }
 
-.rodape__marca {
+.rodapeMarca {
   width: min(320px, 70vw);
 }
 
-.rodape__frase {
+.rodapeFrase {
   font-family: var(--fonte-titulo);
   font-size: 1.5rem;
 }
 
-.rodape__contato-titulo {
+.rodapeContatoTitulo {
   font-weight: 700;
   margin-top: 24px;
 }
 
-.rodape__email {
+.rodapeEmail {
   color: var(--branco);
   text-decoration: none;
   background: var(--azul-profundo);
@@ -213,12 +210,11 @@ section {
   border-radius: 999px;
 }
 
-.rodape__logo {
+.rodapeLogo {
   height: 48px;
   margin-top: 24px;
 }
 
-/* RESPONSIVO */
 @media (max-width: 720px) {
   .conteudoHeader.nav {
     display: none;
