@@ -1,28 +1,25 @@
-<header>
-  <div class="conteudoHeader">
-    <img class="logo" src="img/LogoHeaderCelia.png" alt="Célia">
-
-    <nav class="conteudoHeader nav">
-      @for (link of navLinks; track link.fragment) {
-        <a [href]="'#' + link.fragment">{{ link.label }}</a>
-      }
-    </nav>
-
-    <a class="logo-insta" [href]="instagramUrl" target="_blank" rel="noopener">
-      <img class="logo" src="img/LogoHeaderInsta.png" alt="Instagram">
-    </a>
-  </div>
-</header>
-
+<app-menu-superior></app-menu-superior>
 <main>
   <section class="hero">
-    <img class="heroMarca" src="img/LogoCelia.png" alt="Célia">
+    <div class="heroApresentacao">
+      <img class="heroMarca" src="img/LogoCelia.png" alt="Célia">
+  
+      <p class="heroSlogan">
+        A sua aliada inteligente no cuidado emocional de idosos com Alzheimer
+      </p>
+    </div>
 
-    <p class="heroSlogan">
-      A sua aliada inteligente no cuidado emocional de idosos com Alzheimer
-    </p>
+    <div
+      class="heroCarrossel">
 
-    <img class="heroProduto" src="img/ProdutoCelia.png" alt="Pulseira Célia">
+      <div
+        class="heroCarrosselTrack"
+        [style.transform]="'translateX(-' + (currentSlide() * 100) + '%)'">
+        @for (imagem of heroImages; track imagem.src) {
+          <img class="heroCarrosselImg" [src]="imagem.src" [alt]="imagem.alt">
+        }
+      </div>
+    </div>
   </section>
 
   <!-- resumo do produto -->
@@ -40,10 +37,6 @@
       trazendo mais <strong>segurança</strong>, <strong>bem-estar</strong> e <strong>qualidade de vida</strong>
       ao dia a dia. Um suporte <strong>responsável</strong> que orienta sem substituir profissionais.
     </p>
-
-    <a class="pilaresCta" href="#projeto">
-      Explore como essa abordagem pode <u>transformar</u> o cuidado...
-    </a>
   </section>
 
   <section id="projeto" class="projeto">
@@ -72,21 +65,22 @@
         para familiares, traduzindo informações complexas em insights simples, acionáveis
         e fáceis de aplicar no dia a dia do cuidado.
       </p>
+
+      <button class="btnInfo" >Gostaria de saber mais?</button>
     </div>
   </section>
 
   <!-- CONTATO -->
   <footer id="contato" class="rodape">
-    <img class="rodapeMarca" src="img/marca-celia-clara.png" alt="Célia">
-
+    
     <p class="rodapeFrase">+ segurança para quem você ama.</p>
-
+    
     <p class="rodapeContatoTitulo">Contato e Suporte</p>
     <a class="rodapeEmail" href="mailto:corporationcelia@gmail.com">
       corporationcelia&#64;gmail.com
     </a>
-
-    <img class="rodapeLogo" src="img/LogoHeaderCelia.png" alt="">
-    <small>&copy;Célia</small>
+    
+    <img class="rodapeMarca" src="img/LogoHeaderCelia.png" alt="Célia">
+    <small>&copy;Célia 2026 Todos os direitos reservados.</small>
   </footer>
 </main>

@@ -1,0 +1,93 @@
+:host {
+    display: contents;
+}
+
+.btnMenu {
+    position: fixed;
+    height: 50px;          
+    display: flex;
+    align-items: center;    
+    z-index: 20;
+    background: none;
+    border: none;
+    color: var(--rosa);
+    font-size: 22px;
+    cursor: pointer;
+    padding: 0 8px;
+}
+
+.homeNav {
+    position: fixed;
+    height: 100dvh;
+    width: 0;
+    overflow: hidden;
+    background-color: rgba(23, 18, 87, .6);
+    backdrop-filter: blur(10px);
+    padding: 50px 0;
+    transition: width 0.2s ease;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+.homeNav.aberto {
+    width: 360px;
+}
+
+.btns {
+    display: grid;
+
+}
+
+.btn {
+    position: relative;
+    background-color: rgba(23, 18, 87, .6);
+    border-color: var(--azul-escuro);
+    color: var(--rosa);
+    border-style: solid;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: start;
+    font-size: 20px;
+}
+
+.btn:active {
+    background-color: var(--texto-claro);
+
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 4px;             
+    background-color: var(--rosa);
+    transform: scaleY(0);   
+    transition: transform 0.2s ease-out;
+}
+
+.btn:hover::after {
+    transform: scaleY(1);
+}
+
+.logoutBtn {
+    position: relative;
+    background-color: var(--branco);
+    border-color: var(--texto-claro);
+    color: var(--rosa);
+    border-style: solid;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: start;
+}
+
+.logoutBtn:hover {
+    background-color: var(--rosa);
+    color: var(--branco);
+}
+
+.logoutBtn:active {
+    background-color: var(--branco);
+    color: var(--rosa);
+}

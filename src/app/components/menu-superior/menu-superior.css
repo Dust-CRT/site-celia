@@ -1,0 +1,47 @@
+
+header {
+  height: 10dvh;
+  min-height: 72px;
+  background: rgba(12, 20, 64, .8);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.conteudoHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-height: 100%;
+  max-width: 100%;
+  height: 100%;
+  padding: 0 24px;
+}
+
+.conteudoHeader.nav {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 1;
+  gap: 16px;
+}
+
+.conteudoHeader.nav a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.conteudoHeader.nav a:hover,
+.conteudoHeader.nav a:focus-visible {
+  color: var(--rosa);
+}
+
+.logo {
+  display: block;
+  height: 88px;
+  width: auto;
+  object-fit: contain;
+}

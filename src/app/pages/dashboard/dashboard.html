@@ -1,0 +1,89 @@
+<app-menu-lateral></app-menu-lateral>
+
+<main class="dashboard">
+
+  <section class="dashboardTopo">
+    <h1 class="dashboardTitulo">Painel de Acompanhamento</h1>
+    <p class="dashboardSubtitulo">Paciente: <strong>{{ nomePaciente }}</strong></p>
+  </section>
+
+  <section class="dashboardGrade">
+    <article class="cartao cartaoDestaque">
+      <p class="cartaoRotulo">Último momento de estresse</p>
+      <p class="cartaoValor">{{ ultimoEvento.tempoDecorrido }}</p>
+      <p class="cartaoDetalhe">Registrado às {{ ultimoEvento.horario }}</p>
+    </article>
+
+    <article class="cartao cartaoDestaque">
+      <p class="cartaoRotulo">Estado emocional do dia</p>
+      <p class="cartaoValor cartaoBadge" [class]="'nivel-' + estadoEmocional.nivel">
+        {{ estadoEmocional.label }}
+      </p>
+      <p class="cartaoDetalhe">{{ estadoEmocional.descricao }}</p>
+    </article>
+  </section>
+
+  <section class="cartao cartaoGrafico">
+    <div class="cartaoCabecalho">
+      <h2>Momentos de estresse ao longo do dia</h2>
+      <p class="cartaoSubtitulo">Nível de estresse registrado por horário</p>
+    </div>
+
+    <div class="grafico">
+      @for (registro of registros; track registro.horario) {
+        <div class="graficoColuna">
+          <div
+            class="graficoBarra"
+            [style.height.%]="(registro.nivel / maiorNivel) * 100"
+            [title]="registro.horario + ' — nível ' + registro.nivel">
+          </div>
+          <span class="graficoHorario">{{ registro.horario }}</span>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="cartao cartaoAcoes">
+    <div>
+      <h2>Relatório completo</h2>
+      <p class="cartaoSubtitulo">Exporte os registros para compartilhar com a equipe de saúde.</p>
+    </div>
+
+    <div class="acoesBotoes">
+      <button class="btnInfo" type="button" (click)="baixarRelatorio('pdf')">Baixar PDF</button>
+      <button class="btnInfo btnSecundario" type="button" (click)="baixarRelatorio('csv')">Baixar CSV</button>
+    </div>
+  </section>
+</main>
+
+<div class="chatbot">
+  @if (chatAberto()) {
+    <div class="chatbotPainel">
+      <div class="chatbotCabecalho">
+        <span>Assistente Célia</span>
+        <button type="button" (click)="toggleChat()" aria-label="Fechar chat">✕</button>
+      </div>
+
+      <div class="chatbotMensagens">
+        @for (mensagem of mensagens(); track $index) {
+          <p class="chatbotMensagem" [class.usuario]="mensagem.autor === 'usuario'">
+            {{ mensagem.texto }}
+          </p>
+        }
+      </div>
+
+      <form class="chatbotForm" (ngSubmit)="enviarMensagem()">
+        <input
+          class="chatbotInput"
+          type="text"
+          placeholder="Digite sua pergunta..."
+          name="mensagem">
+        <button class="chatbotEnviar" type="submit">Enviar</button>
+      </form>
+    </div>
+  }
+
+  <button class="chatbotBotao" type="button" (click)="toggleChat()" aria-label="Abrir chat">
+    💬
+  </button>
+</div>
