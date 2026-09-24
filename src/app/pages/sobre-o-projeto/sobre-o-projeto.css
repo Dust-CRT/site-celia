@@ -63,7 +63,8 @@ section {
 }
 
 .projetoGaleria img {
-  max-width: 500px;
+  max-width: 30vw;
+  min-width: 300px;
   max-height: 500px;
   object-fit: contain;
 }
@@ -112,23 +113,14 @@ section {
 }
 
 .appUnico {
-  background: var(--azul-escuro);
   text-align: center;
   padding: 64px 24px;
 }
 
-.appUnicoOrbita {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
-}
-
 .appUnicoMockup {
-  max-width: 500px;
+  max-width: 50vw;
+  min-width: 300px;
+
 }
 
 .appUnicoTag {
@@ -167,6 +159,12 @@ section {
   line-height: 1.6;
 }
 
+.cardEquipe {
+  max-width: 50vw;
+  min-width: 300px;
+
+}
+
 .rodape {
   background: var(--azul-escuro);
   text-align: center;
@@ -197,6 +195,7 @@ section {
   padding: 8px 20px;
   border-radius: 999px;
 }
+
 
 @media (max-width: 720px) {
   .hero {
