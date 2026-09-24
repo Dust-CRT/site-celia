@@ -18,13 +18,11 @@ type NivelEmocional = 'calmo' | 'moderado' | 'agitado';
  
 @Component({
   selector: 'app-dashboard',
-  imports: [MenuSuperior, MenuLateral],
+  imports: [MenuLateral],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
 export class Dashboard {
-  // ---- Dados mockados — substituir pela integração real com a API/pulseira depois ----
- 
   readonly nomePaciente = 'Maria Aparecida';
  
   readonly ultimoEvento = {
@@ -51,39 +49,11 @@ export class Dashboard {
  
   readonly maiorNivel = Math.max(...this.registros.map((r) => r.nivel));
  
-  // ---- Chatbot — simulação local só para a apresentação, sem backend ----
- 
   readonly chatAberto = signal(false);
  
-  readonly mensagens = signal<MensagemChat[]>([
-    { autor: 'bot', texto: 'Olá! Posso te ajudar a entender os dados de hoje.' },
-  ]);
- 
-  mensagemAtual = '';
  
   toggleChat(): void {
     this.chatAberto.update((aberto) => !aberto);
-  }
- 
-  enviarMensagem(): void {
-    const texto = this.mensagemAtual.trim();
-    if (!texto) {
-      return;
-    }
- 
-    this.mensagens.update((msgs) => [...msgs, { autor: 'usuario', texto }]);
-    this.mensagemAtual = '';
- 
-    // Resposta simulada — trocar pela integração real do chatbot futuramente
-    setTimeout(() => {
-      this.mensagens.update((msgs) => [
-        ...msgs,
-        {
-          autor: 'bot',
-          texto: 'Essa é uma resposta de exemplo. A integração real do assistente ainda será conectada aqui.',
-        },
-      ]);
-    }, 700);
   }
  
   baixarRelatorio(formato: 'pdf' | 'csv'): void {

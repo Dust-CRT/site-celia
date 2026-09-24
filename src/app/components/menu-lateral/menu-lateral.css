@@ -73,13 +73,14 @@
 
 .logoutBtn {
     position: relative;
-    background-color: var(--branco);
-    border-color: var(--texto-claro);
+    background-color: rgba(181, 24, 100, 0.6);
+    border-color: var(--azul-escuro);
     color: var(--rosa);
     border-style: solid;
     padding-top: 25px;
     padding-bottom: 25px;
     text-align: start;
+    font-size: 20px;
 }
 
 .logoutBtn:hover {

@@ -51,7 +51,6 @@
 
     <div class="acoesBotoes">
       <button class="btnInfo" type="button" (click)="baixarRelatorio('pdf')">Baixar PDF</button>
-      <button class="btnInfo btnSecundario" type="button" (click)="baixarRelatorio('csv')">Baixar CSV</button>
     </div>
   </section>
 </main>
@@ -65,14 +64,10 @@
       </div>
 
       <div class="chatbotMensagens">
-        @for (mensagem of mensagens(); track $index) {
-          <p class="chatbotMensagem" [class.usuario]="mensagem.autor === 'usuario'">
-            {{ mensagem.texto }}
-          </p>
-        }
+        
       </div>
 
-      <form class="chatbotForm" (ngSubmit)="enviarMensagem()">
+      <form class="chatbotForm">
         <input
           class="chatbotInput"
           type="text"

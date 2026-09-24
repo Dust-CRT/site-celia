@@ -201,11 +201,9 @@ section {
 }
 
 .projetoGaleria img {
-  width: 160px;
-  height: 160px;
+  max-width: 500px;
+  max-height: 500px;
   object-fit: contain;
-  border-radius: 50%;
-  box-shadow: 0 0 32px var(--rosa);
 }
 
 .btnInfo {
