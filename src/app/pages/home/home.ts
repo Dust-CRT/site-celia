@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MenuSuperior } from '../../components/menu-superior/menu-superior';
 
 interface NavLink {
@@ -25,13 +25,19 @@ export class Home implements OnInit {
     { label: 'Contato e Suporte', fragment: 'contato' },
   ];
 
+  constructor(private router: Router){};
+
+   navegarPara(rota: string): void {
+    this.router.navigate([rota]);
+  }
+
   readonly instagramUrl = 'https://instagram.com/';
 
   // Troque/adicione os caminhos das suas imagens aqui
   readonly heroImages: HeroImage[] = [
-    { src: 'img/ProdutoCelia.png', alt: 'Pulseira Célia' },
-    { src: 'img/ProdutoCelia2.png', alt: 'Pulseira Célia - detalhe do sensor' },
-    { src: 'img/ProdutoCelia3.png', alt: 'Pulseira Célia sendo usada' },
+    { src: 'img/IlustraçãoPulseira1.png', alt: 'Pulseira Célia' },
+    { src: 'img/IlustraçãoPulseira2.png', alt: 'Pulseira Célia - detalhe do sensor' },
+    { src: 'img/IlustraçãoPulseira3.png', alt: 'Pulseira Célia sendo usada' },
   ];
 
   readonly currentSlide = signal(0);
