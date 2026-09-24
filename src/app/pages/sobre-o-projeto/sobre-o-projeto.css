@@ -197,6 +197,96 @@ section {
 }
 
 
+.alzheimer {
+  background: linear-gradient(0deg, var(--azul-escuro), var(--azul-claro));
+  text-align: center;
+}
+
+.alzheimerTitulo {
+  font-family: var(--fonte-titulo);
+  color: var(--branco);
+  text-shadow: 0 0 24px var(--roxo-claro);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+}
+
+.alzheimerTexto {
+  max-width: 720px;
+  margin: 16px auto;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.alzheimerCerebro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.alzheimerCerebro img {
+  max-width: 40vw;
+  max-height: 40vw;
+  min-width: 300px;
+  min-height: 300px;
+  object-fit: contain;
+  border-radius: 50%;
+  padding: 12px;
+}
+
+.alzheimerLogo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: var(--roxo);
+  box-shadow: 0 0 30px var(--roxo-claro);
+  padding: 12px;
+}
+
+.alzheimerDetalhe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 900px;
+  margin: 40px auto 0;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.alzheimerFoto {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 40px var(--roxo-claro);
+  flex-shrink: 0;
+}
+
+.rodapeConteCom {
+  font-family: var(--fonte-titulo);
+  font-size: 1.3rem;
+}
+
+.rodapeImagens {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.rodapeLogoGrande {
+  width: 140px;
+  object-fit: contain;
+}
+
+.rodapeRelogio {
+  width: 140px;
+  object-fit: contain;
+}
+
 @media (max-width: 720px) {
   .hero {
     flex-direction: column;
@@ -225,5 +315,15 @@ section {
   .projetoTexto {
     margin: 0;
 
+  }
+
+  .alzheimerDetalhe {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .propositoItem {
+    flex-direction: column;
+    text-align: center;
   }
 }
