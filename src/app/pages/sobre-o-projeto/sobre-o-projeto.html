@@ -52,31 +52,109 @@
         Tudo isso está conectado ao nosso aplicativo, onde um Chatbot especializado oferece suporte imediato, ajudando cuidadores a entender o que está acontecendo - e como agir - no exato momento de uma instabilidade emocional.
     </p>
     
-    </div>
-      <div class="appUnico">
-        <img src="img/ConexãoComApp.png" alt="Mockup do aplicativo Célia em um celular" class="appUnicoMockup">
+  </div>
+  <div class="appUnico">
+    <img src="img/ConexãoComApp.png" alt="Mockup do aplicativo Célia em um celular" class="appUnicoMockup">
+  </div>
+  
+</section>
+
+
+  <main class="dashboard">
+
+    <section class="dashboardTopo">
+      <h1 class="dashboardTitulo">Painel de Acompanhamento</h1>
+      <p class="dashboardSubtitulo">Paciente: <strong>{{ nomePaciente }}</strong></p>
+    </section>
+
+    <section class="dashboardGrade">
+      <article class="cartao cartaoDestaque">
+        <p class="cartaoRotulo">Último momento de estresse</p>
+        <p class="cartaoValor">{{ ultimoEvento.tempoDecorrido }}</p>
+        <p class="cartaoDetalhe">Registrado às {{ ultimoEvento.horario }}</p>
+      </article>
+
+      <article class="cartao cartaoDestaque">
+        <p class="cartaoRotulo">Estado emocional do dia</p>
+        <p class="cartaoValor cartaoBadge" [class]="'nivel-' + estadoEmocional.nivel">
+          {{ estadoEmocional.label }}
+        </p>
+        <p class="cartaoDetalhe">{{ estadoEmocional.descricao }}</p>
+      </article>
+    </section>
+
+    <section class="cartao cartaoGrafico">
+      <div class="cartaoCabecalho">
+        <h2>Momentos de estresse ao longo do dia</h2>
+        <p class="cartaoSubtitulo">Nível de estresse registrado por horário</p>
       </div>
 
-  </section>
+      <div class="grafico">
+        @for (registro of registros; track registro.horario) {
+          <div class="graficoColuna">
+            <div
+              class="graficoBarra"
+              [style.height.%]="(registro.nivel / maiorNivel) * 100"
+              [title]="registro.horario + ' — nível ' + registro.nivel">
+            </div>
+            <span class="graficoHorario">{{ registro.horario }}</span>
+          </div>
+        }
+      </div>
+    </section>
 
+    <section class="cartao cartaoAcoes">
+      <div>
+        <h2>Relatório completo</h2>
+        <p class="cartaoSubtitulo">Exporte os registros para compartilhar com a equipe de saúde.</p>
+      </div>
 
+      <div class="acoesBotoes">
+        <button class="btnInfo" type="button" (click)="baixarRelatorio('pdf')">Baixar PDF</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="chatbot">
+    @if (chatAberto()) {
+      <div class="chatbotPainel">
+        <div class="chatbotCabecalho">
+          <span>Assistente Célia</span>
+          <button type="button" (click)="toggleChat()" aria-label="Fechar chat">✕</button>
+        </div>
+
+        <div class="chatbotMensagens">
+          
+        </div>
+
+        <form class="chatbotForm">
+          <input
+            class="chatbotInput"
+            type="text"
+            placeholder="Digite sua pergunta..."
+            name="mensagem">
+          <button class="chatbotEnviar" type="submit">Enviar</button>
+        </form>
+      </div>
+    }
+  </div>
   <section id="equipe" class="equipe">
     <h2 class="equipeTitulo">SOBRE A NOSSA<br>EQUIPE DE GESTÂO</h2>
     <p class="equipeTexto">
       Por trás deste projeto, há pessoas dedicadas a transformar cuidado em inovação. Conheça nossa equipe.
     </p>
-
+    
     <img class="cardEquipe" src="img/Equipe.png" alt="">
   </section>
 
   <!-- CONTATO -->
   <footer id="contato" class="rodape">
-
-    <p class="rodapeConteCom">Conte com a</p>
     <div class="rodapeImagens">
-      <img src="img/LogoCeliaGrande.png" alt="Célia" class="rodapeLogoGrande">
-      <img src="img/RelogioMockup.png" alt="Pulseira Célia" class="rodapeRelogio">
+      <img src="img/LogoCelia.png" alt="Célia" class="rodapeLogoGrande">
+      <img src="img/ProdutoCelia.png" alt="Pulseira Célia" class="rodapeRelogio">
     </div>
+
+    <p class="rodapeConteCom">Conte com Célia</p>
 
     <p class="rodapeFrase">+ segurança para quem você ama.</p>
     
@@ -85,7 +163,6 @@
       corporationcelia&#64;gmail.com
     </a>
     
-    <img class="rodapeMarca" src="img/LogoHeaderCelia.png" alt="Célia">
     <small>&copy;Célia 2026 Todos os direitos reservados.</small>
   </footer>
 </main>

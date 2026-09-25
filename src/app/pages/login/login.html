@@ -1,0 +1,53 @@
+<app-menu-superior></app-menu-superior>
+<main>
+  <section class="login">
+    <div class="loginCard">
+      <img class="loginMarca" src="img/LogoCelia.png" alt="Célia">
+
+      <h1 class="loginTitulo">Bem-vindo de volta</h1>
+      <p class="loginSubtitulo">Acesse sua conta para continuar cuidando de quem você ama.</p>
+
+      <form class="loginForm">
+        <div class="loginCampo">
+          <label class="loginLabel" for="email">E-mail</label>
+          <input
+            class="loginInput"
+            id="email"
+            name="email"
+            type="email"
+            placeholder="seuemail@exemplo.com"
+            required>
+        </div>
+
+        <div class="loginCampo">
+          <label class="loginLabel" for="senha">Senha</label>
+          <input
+            class="loginInput"
+            id="senha"
+            name="senha"
+            placeholder="Digite sua senha"
+            required>
+          <button
+            type="button"
+            class="loginToggleSenha">
+            
+          </button>
+        </div>
+
+        <div class="loginOpcoes">
+          <label class="loginLembrar">
+            <input type="checkbox" name="lembrar">
+            Lembrar de mim
+          </label>
+        </div>
+
+        <button class="btnInfo loginBtn" type="submit">Entrar</button>
+      </form>
+
+      <p class="loginCadastro">
+        Ainda não tem uma conta?
+        <a class="loginLink" >Cadastre-se</a>
+      </p>
+    </div>
+  </section>
+</main>

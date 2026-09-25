@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrl: './menu-lateral.css',
 })
 export class MenuLateral {
-menuAberto : boolean = false;
+  menuAberto : boolean = false;
   constructor(private router: Router){};
 
    navegarPara(rota: string): void {

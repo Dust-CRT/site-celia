@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Route, Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MenuSuperior } from '../../components/menu-superior/menu-superior';
 import { MenuLateral } from '../../components/menu-lateral/menu-lateral';
+import { Home } from '../home/home';
  
 interface RegistroEstresse {
   horario: string;
@@ -23,8 +24,18 @@ type NivelEmocional = 'calmo' | 'moderado' | 'agitado';
   styleUrl: './dashboard.css',
 })
 export class Dashboard {
+  logado : boolean = false;
+
+  constructor(private router: Router){};
   readonly nomePaciente = 'Maria Aparecida';
- 
+
+  navegarPara(rota: string): void {
+    this.router.navigate([rota]);
+    
+  }
+
+  
+
   readonly ultimoEvento = {
     tempoDecorrido: '2h 15min',
     horario: '14:32',

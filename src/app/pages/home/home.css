@@ -260,6 +260,16 @@ section {
     align-items: center;
   }
 
+  .pilaresTitulo, .pilaresTexto {
+    padding-left: 0;
+    text-align: center;
+    
+  }
+  
+  .pilaresTitulo {
+    display: grid;
+    justify-content: center;
+  }
   
   .heroApresentacao {
     justify-items: center;
@@ -281,6 +291,5 @@ section {
 
   .projetoTexto {
     margin: 0;
-
   }
 }
